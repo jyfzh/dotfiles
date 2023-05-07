@@ -1,0 +1,21 @@
+# NOTE: https://clang.llvm.org/extra/clang-tidy/
+# NOTE there must be no spaces before the '-', so put the comma after.
+# When making changes, be sure to verify the output of the following command to ensure
+# the desired checks are enabled (run from the directory containing a .clang-tidy file):
+# `clang-tidy -list-checks`
+
+# NOTE: Please don't disable inheritance from the parent to make sure that common checks get propagated.
+InheritParentConfig: true
+Checks: '
+    -*,
+    clang-diagnostic-*,
+    llvm-*,
+    misc-*,
+    -misc-unused-parameters,
+    -misc-non-private-member-variables-in-classes,
+    -readability-identifier-naming,
+    modernize-*,
+    performance-*
+'
+
+CheckOptions: []
