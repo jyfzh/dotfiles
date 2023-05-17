@@ -1,0 +1,10 @@
+echo neovim dependencies
+if ! command -v nvim >/dev/null 2>&1; then
+    sudo apt install -y build-essential cmake fzf unzip sqlite3 libsqlite3-dev ripgrep python3-venv
+fi
+
+if ! command -v fd >/dev/null 2>&1; then
+    echo install fd
+    sudo apt install -y fd-find
+    ln -s /usr/bin/fdfind ~/.local/bin/fd
+fi
