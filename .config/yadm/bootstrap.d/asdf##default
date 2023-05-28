@@ -1,0 +1,3 @@
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+echo . "$HOME/.asdf/asdf.sh" >> ~/.bashrc
+echo . "$HOME/.asdf/completions/asdf.bash" >> ~/.bashrc

@@ -23,5 +23,3 @@ export EDITOR=vim
 export VISUAL=vim
 export GPG_TTY=$(tty)
 export PATH="$HOME/.local/bin:$PATH"
-
-. "$HOME/.asdf/asdf.sh"

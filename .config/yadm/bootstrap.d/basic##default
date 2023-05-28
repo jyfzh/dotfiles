@@ -1,4 +1,4 @@
-echo neovim dependencies
+# neovim
 if ! command -v nvim >/dev/null 2>&1; then
     sudo apt install -y build-essential cmake fzf unzip sqlite3 libsqlite3-dev ripgrep python3-venv
 fi
