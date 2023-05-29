@@ -1,0 +1,14 @@
+echo -e "\e[34m wakatime-cli \e[0m"
+
+{% if yadm.os == "Linux" %}
+export os=linux
+{% endif %}
+
+{% if yadm.arch == "x86_64" %}
+export family=amd64
+{% endif %}
+
+wget https://github.com/wakatime/wakatime-cli/releases/download/v1.73.1/wakatime-cli-$os-$family.zip -O ~/.local/bin/wakatime-cli-$os-$family.zip
+unzip ~/.local/bin/wakatime-cli-$os-$family.zip -d ~/.local/bin/ 
+rm ~/.local/bin/wakatime-cli-$os-$family.zip
+mv ~/.local/bin/wakatime-cli-$os-$family ~/.local/bin/wakatime-cli

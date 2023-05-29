@@ -1,0 +1,9 @@
+echo -e "\e[34m basic \e[0m"
+
+sudo apt install -y build-essential cmake fzf unzip sqlite3 libsqlite3-dev ripgrep python3-venv
+
+if ! command -v fd >/dev/null 2>&1; then
+    echo install fd
+    sudo apt install -y fd-find
+    ln -s /usr/bin/fdfind ~/.local/bin/fd
+fi

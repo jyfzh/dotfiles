@@ -1,8 +1,5 @@
 #!/bin/bash
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install git vim -y
-
 # Save this file as ~/.config/yadm/bootstrap and make it executable. It will
 # execute all executable files (excluding templates and editor backups) in the
 # ~/.config/yadm/bootstrap.d directory when run.
