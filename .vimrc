@@ -71,4 +71,4 @@ function! ToggleNetrw()
     endif
 endfunction
 
-noremap <space>t :call ToggleNetrw()<CR>
+noremap <space>tt :call ToggleNetrw()<CR>
