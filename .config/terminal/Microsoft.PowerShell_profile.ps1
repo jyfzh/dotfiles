@@ -1,3 +1,5 @@
+Import-Module Az.Tools.Predictor
+
 $PSStyle.FileInfo.Directory = "`e[34m"
 
 $PSOption = @{ 

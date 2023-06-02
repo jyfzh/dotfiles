@@ -49,7 +49,7 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;; read agend data from which file
-(setq org-agenda-files (list "c:/Users/jyf/code/org/"))
+(setq org-agenda-files (list "~/code/org/"))
 ;; (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
 
