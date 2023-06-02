@@ -1,10 +1,17 @@
-Invoke-Expression (&starship init powershell)
-
 $PSStyle.FileInfo.Directory = "`e[34m"
-Set-PSReadlineOption -EditMode emacs
-Set-PSReadLineOption -BellStyle None
 
-Set-PSReadLineOption -PredictionSource History 
+$PSOption = @{ 
+    PredictionSource = 'History';
+    EditMode = 'emacs'; # Vi
+    BellStyle = 'None';
+    PredictionViewStyle = 'ListView';
+    ShowToolTips = $false
+}
+Set-PSReadLineOption @PSOption
+Set-PSReadLineOption -PredictionSource HistoryAndPlugin # History 
+
+# Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
+Set-PSReadLineKeyHandler -Chord Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key UpArrow -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::HistorySearchBackward()
     [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine()
@@ -60,3 +67,4 @@ function vmkill{
     taskkill /F /IM vmware-tray.exe
 }
 
+Invoke-Expression (&starship init powershell)

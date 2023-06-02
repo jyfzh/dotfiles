@@ -171,7 +171,10 @@
 				"type": "field",
 				"outboundTag": "JP",
 				"domain": [
-					"domain:openai.com"
+					"domain:openai.com",
+					"domain:bing.com",
+					"domain:bingapis.com",
+					"domain:edge.microsoft.com"
 				]
             },
             {
@@ -194,8 +197,7 @@
                 "balancerTag": "balancer",
 				"domain": [
                     "geosite:geolocation-!cn",
-                    "domain:telegram.com",
-                    "domain:wycis.me"
+                    "domain:telegram.com"
 				]
 			},
             {

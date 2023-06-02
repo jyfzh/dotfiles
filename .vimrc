@@ -44,6 +44,8 @@ set foldlevel=100
 set linebreak
 set scrolloff=5
 set ruler
+set noerrorbells
+" set visualbell
 syntax on
 filetype indent on
 
@@ -72,3 +74,5 @@ function! ToggleNetrw()
 endfunction
 
 noremap <space>tt :call ToggleNetrw()<CR>
+noremap <C-u> 9k
+noremap <C-d> 9j
