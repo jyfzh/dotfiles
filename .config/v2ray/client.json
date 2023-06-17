@@ -54,7 +54,7 @@
 				"vnext": [
 					{
 						"address": "www.wycjyf.live",
-						"port": 443,
+						"port": 8080,
 						"users": [
 							{
 								"id": "b831381d-6324-4d53-ad4f-8cda48b30811",
@@ -171,17 +171,7 @@
 				"type": "field",
 				"outboundTag": "JP",
 				"domain": [
-					"domain:openai.com",
-					"domain:bing.com",
-					"domain:bingapis.com",
-					"domain:edge.microsoft.com"
-				]
-            },
-            {
-				"type": "field",
-				"outboundTag": "HK",
-				"domain": [
-					"domain:github.com"
+					"domain:openai.com"
 				]
             },
             {
@@ -197,7 +187,8 @@
                 "balancerTag": "balancer",
 				"domain": [
                     "geosite:geolocation-!cn",
-                    "domain:telegram.com"
+                    "domain:telegram.com",
+                    "domain:autoahk.com"
 				]
 			},
             {

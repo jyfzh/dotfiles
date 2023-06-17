@@ -45,7 +45,7 @@ set linebreak
 set scrolloff=5
 set ruler
 set noerrorbells
-" set visualbell
+set novisualbell
 syntax on
 filetype indent on
 
@@ -73,6 +73,6 @@ function! ToggleNetrw()
     endif
 endfunction
 
-noremap <space>tt :call ToggleNetrw()<CR>
+noremap <space>t :call ToggleNetrw()<CR>
 noremap <C-u> 9k
 noremap <C-d> 9j

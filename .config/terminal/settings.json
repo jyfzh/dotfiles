@@ -13,33 +13,13 @@
         },
         {
             "command": "toggleFocusMode",
-            "keys": "alt+z"
+            "keys": "ctrl+shift+z"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
+            "command": "togglePaneZoom",
+            "keys": "alt+shift+m"
         },
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+shift+w"
-        },
-        {
-            "command": "unbound",
-            "keys": ""
-        },
-        {
+	{
             "command": 
             {
                 "action": "splitPane",
@@ -49,8 +29,8 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": "closePane",
-            "keys": "ctrl+shift+w"
+            "command": "tabSearch",
+            "keys": "ctrl+shift+q"
         }
     ],
     "alwaysOnTop": false,
@@ -83,7 +63,7 @@
             "elevate": false,
             "font": 
             {
-                "face": "JetBrainsMono NF",
+                "face": "JetBrainsMono NFM",
                 "size": 16.0
             },
             "intenseTextStyle": "all",
@@ -114,10 +94,10 @@
                 "name": "Windows PowerShell"
             },
             {
-                "commandline": "C:/Program Files/Git/git-cmd.exe --login -i",
+                "commandline": "C:/Users/jyf/scoop/apps/git/current/bin/bash.exe --login -i",
                 "guid": "{11a66a21-0c86-4522-aa0d-415cce5f172c}",
                 "hidden": false,
-                "icon": "C:/Program Files/Git/mingw64/share/git/git-for-windows.ico",
+                "icon": "C:/Users/jyf/scoop/apps/git/current/mingw64/share/git/git-for-windows.ico",
                 "name": "git-bash",
                 "startingDirectory": "C:\\Users\\jyf\\code"
             },

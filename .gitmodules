@@ -1,4 +1,0 @@
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = git@github.com:jyf-111/nvim
-    update = rebase
