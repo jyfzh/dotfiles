@@ -33,4 +33,3 @@ $env:PATH+=";$HOME\.local\bin"
 function pro { vim $profile }
 function ll { ls.exe -al }
 function rmhis { Remove-Item $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt }
-Remove-Alias -Name ls
