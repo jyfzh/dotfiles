@@ -19,7 +19,7 @@
             "command": "togglePaneZoom",
             "keys": "alt+shift+m"
         },
-	{
+        {
             "command": 
             {
                 "action": "splitPane",
@@ -407,7 +407,7 @@
         }
     ],
     "showTabsInTitlebar": true,
-    "startOnUserLogin": true,
+    "startOnUserLogin": false,
     "tabSwitcherMode": "mru",
     "themes": 
     [

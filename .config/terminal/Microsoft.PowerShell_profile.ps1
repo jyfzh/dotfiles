@@ -7,8 +7,8 @@ Invoke-Expression (&starship init powershell)
 
 #region mamba initialize
 # !! Contents within this block are managed by 'mamba shell init' !!
-$Env:MAMBA_ROOT_PREFIX = "C:\Users\jyf\scoop\persist\micromamba\mamba"
-$Env:MAMBA_EXE = "C:\Users\jyf\scoop\apps\micromamba\current\micromamba.exe"
+$Env:MAMBA_ROOT_PREFIX = "$HOME\scoop\persist\micromamba\mamba"
+$Env:MAMBA_EXE = "$HOME\scoop\apps\micromamba\current\micromamba.exe"
 (& $Env:MAMBA_EXE 'shell' 'hook' -s 'powershell' -p $Env:MAMBA_ROOT_PREFIX) | Out-String | Invoke-Expression
 #endregion
 
