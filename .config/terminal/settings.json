@@ -63,14 +63,14 @@
             "elevate": false,
             "font": 
             {
-                "face": "JetBrainsMono NFM",
+                "face": "JetBrainsMono NF",
                 "size": 16.0
             },
             "intenseTextStyle": "all",
             "opacity": 57,
             "padding": "2",
             "scrollbarState": "hidden",
-            "startingDirectory": "C:\\Users\\jyf\\code",
+            "startingDirectory": null,
             "useAcrylic": true,
             "useAtlasEngine": true
         },
