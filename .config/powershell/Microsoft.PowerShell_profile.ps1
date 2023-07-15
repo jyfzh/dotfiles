@@ -18,9 +18,6 @@ $env:FZF_DEFAULT_COMMAND="rg --files . 2> nul"
 $env:FZF_DEFAULT_OPTS="--preview 'type {}'"
 $env:PSFZF_EDITOR_OPTIONS="nvim"
 
-# komorebi
-$Env:KOMOREBI_CONFIG_HOME = "$HOME\.config\komorebi"
-
 # XDG
 $env:XDG_DATA_HOME="$HOME\.local\share"
 $env:XDG_CONFIG_HOME="$HOME\.config"

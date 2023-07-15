@@ -5,13 +5,9 @@
 [user]
 	name = jyf
 	email = jyfserendipity@outlook.com
-[safe]
-	directory = C:/Users/jyf/scoop/apps/scoop/current
-	directory = C:/Users/jyf/scoop/buckets/apps
-	directory = C:/Users/jyf/scoop/buckets/main
 [credential "helperselector"]
 	selected = manager-core
-[credential "https://ghproxy.com"]
-	provider = generic
 [pull]
 	rebase = true
+[core]
+	autocrlf = input

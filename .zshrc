@@ -3,6 +3,15 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Load starship theme
+# line 1: `starship` binary as command, from github release
+# line 2: starship setup at clone(create init.zsh, completion)
+# line 3: pull behavior same as clone, source init.zsh
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/starship
+
 zinit light zdharma-continuum/history-search-multi-word
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -19,7 +28,9 @@ HISTFILE=~/.zsh_history
 
 alias ll="ls -la"
 
+export FZF_DEFAULT_COMMAND="rg --files ."
+export FZF_DEFAULT_OPTS="--preview 'cat {}'"
 export EDITOR=vim
 export VISUAL=vim
 export GPG_TTY=$(tty)
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin/:$HOME/.local/bin:$PATH"

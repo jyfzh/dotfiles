@@ -15,12 +15,6 @@
 			"listen": "127.0.0.1",
 			"port": 10808,
 			"protocol": "socks",
-			"sniffing": {
-				"enabled": true,
-				"destOverride": [
-					"tls"
-				]
-			},
 			"settings": {
 				"auth": "noauth",
 				"udp": true,
@@ -31,13 +25,6 @@
 			"listen": "127.0.0.1",
 			"port": "10809",
 			"protocol": "http",
-			"sniffing": {
-				"enabled": true,
-				"destOverride": [
-					"http",
-					"tls"
-				]
-			},
 			"settings": {
 				"auth": "noauth",
 				"udp": true,
@@ -71,7 +58,7 @@
 				"security": "tls",
 				"tlsSettings": {
 					"serverName": "www.wycjyf.live",
-					"allowInsecure": false
+					"allowInsecure": true
 				},
 				"wsSettings": {
 					"path": "/iamff/",
@@ -166,11 +153,19 @@
 					"domain:googeadsserving.cn"
 				]
 			},
+            {
+				"type": "field",
+				"outboundTag": "HK",
+				"domain": [
+					"domain:github.com"
+				]
+            },
 			{
 				"type": "field",
 				"outboundTag": "JP",
 				"domain": [
-					"domain:openai.com"
+					"domain:openai.com",
+					"domain:google.com"
 				]
             },
             {
@@ -178,7 +173,9 @@
                 "outboundTag": "direct",
 				"domain": [
                     "geosite:cn",
-                    "domain:azure.com"
+                    "domain:azure.com",
+                    "domain:microsoft.com",
+                    "domain:live.com"
 				]
 			},
             {
