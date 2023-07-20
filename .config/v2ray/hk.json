@@ -1,0 +1,122 @@
+{
+	"policy": {
+		"system": {
+			"statsOutboundUplink": false,
+			"statsOutboundDownlink": false
+		}
+	},
+	"log": {
+		"loglevel": "warning",
+		"access": "",
+		"error": ""
+	},
+	"inbounds": [
+		{
+			"listen": "127.0.0.1",
+			"port": 10808,
+			"protocol": "socks",
+			"settings": {
+				"auth": "noauth",
+				"udp": true,
+				"allowTransparent": false
+			}
+		},
+		{
+			"listen": "127.0.0.1",
+			"port": "10809",
+			"protocol": "http",
+			"settings": {
+				"auth": "noauth",
+				"udp": true,
+				"allowTransparent": false
+			}
+		}
+	],
+	"outbounds": [
+		{
+			"tag": "HK",
+			"protocol": "vmess",
+			"settings": {
+				"vnext": [
+					{
+						"address": "www.wycjyf.live",
+						"port": 8080,
+						"users": [
+							{
+								"id": "b831381d-6324-4d53-ad4f-8cda48b30811",
+								"mux": {
+									"enabled": false,
+									"concurrency": -1
+								}
+							}
+						]
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"security": "tls",
+				"tlsSettings": {
+					"serverName": "www.wycjyf.live",
+					"allowInsecure": true
+				},
+				"wsSettings": {
+					"path": "/iamff/",
+					"headers": {
+						"Host": "www.wycjyf.live"
+					}
+				}
+			},
+			"mux": {
+				"enabled": false,
+				"concurrency": -1
+			}
+		},
+		{
+			"tag": "direct",
+			"protocol": "freedom",
+			"settings": {}
+		},
+		{
+			"tag": "blackhole",
+			"protocol": "blackhole",
+			"settings": {}
+		}
+	],
+	"observatory": {
+		"subjectSelector":[
+			"HK"
+		],
+		"probeInterval":"10m"
+	},
+	"stats": {},
+	"api": {
+		"tag": "api",
+		"services": [
+			"StatsService"
+		]
+	},
+	"routing": {
+		"domainStrategy": "IPIfNonMatch",
+		"rules": [
+			{
+				"type": "field",
+				"outboundTag": "blackhole",
+				"domain": [
+					"geosite:category-ads-all",
+					"domain:googeadsserving.cn"
+				]
+			},
+            {
+				"type": "field",
+                "outboundTag": "direct",
+				"domain": [
+                    "geosite:cn",
+                    "domain:azure.com",
+                    "domain:microsoft.com",
+                    "domain:live.com"
+				]
+			}
+        ]
+    }
+}
