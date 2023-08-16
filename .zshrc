@@ -27,10 +27,3 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 alias ll="ls -la"
-
-export FZF_DEFAULT_COMMAND="rg --files ."
-export FZF_DEFAULT_OPTS="--preview 'cat {}'"
-export EDITOR=vim
-export VISUAL=vim
-export GPG_TTY=$(tty)
-export PATH="$HOME/.cargo/bin/:$HOME/.local/bin:$PATH"

@@ -12,7 +12,7 @@
 	},
 	"inbounds": [
 		{
-			"listen": "127.0.0.1",
+			"listen": "0.0.0.0",
 			"port": 10808,
 			"protocol": "socks",
 			"settings": {
@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"listen": "127.0.0.1",
+			"listen": "0.0.0.0",
 			"port": "10809",
 			"protocol": "http",
 			"settings": {
@@ -40,7 +40,7 @@
 				"vnext": [
 					{
 						"address": "www.wycjyf.live",
-						"port": 8080,
+						"port": 443,
 						"users": [
 							{
 								"id": "b831381d-6324-4d53-ad4f-8cda48b30811",
@@ -113,8 +113,7 @@
 				"domain": [
                     "geosite:cn",
                     "domain:azure.com",
-                    "domain:microsoft.com",
-                    "domain:live.com"
+                    "domain:microsoft.com"
 				]
 			}
         ]

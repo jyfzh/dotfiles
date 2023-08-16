@@ -2,10 +2,10 @@
 
 BLANK='#00000000'
 CLEAR='#ffffff22'
-DEFAULT='#00897bE6'
-TEXT='#00897bE6'
-WRONG='#880000bb'
-VERIFYING='#00564dE6'
+DEFAULT='#88c0d0'
+TEXT='#f5f5f5'
+WRONG='#FF0000'
+VERIFYING='#d8dee9'
 
 i3lock \
 --insidever-color=$CLEAR     \
@@ -32,5 +32,5 @@ i3lock \
 --clock                      \
 --indicator                  \
 --time-str="%H:%M:%S"        \
---date-str="%A, %Y-%m-%d"       \
+--date-str="%A, %Y-%m-%d"    \
 --keylayout 1                \
