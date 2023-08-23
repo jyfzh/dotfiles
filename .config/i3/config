@@ -6,9 +6,9 @@ default_orientation vertical
 workspace_layout default
 hide_edge_borders smart
 
-# gaps inner 3
-# gaps outer 3
-smart_gaps on
+gaps inner 3
+gaps outer 3
+# smart_gaps on
 
 set $up k
 set $down j

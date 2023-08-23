@@ -69,14 +69,14 @@ top-center = date
 top-right = keyboard kdeconnect clipmenu-widget onedrive-widget v2ray-widget network-short backlight pulseaudio battery notify
 
 # Bottom modules
-bottom-left = powermenu cpu memory temperature network-detail
+bottom-left =
 bottom-center =
-bottom-right = weather
+bottom-right =
 
 # Position of tray icons. Avaliable options are left/center/right and none.
 # If the tray is put at the bottom bar, then systray-top must set to none, and vice versa.
-systray-top = none
-systray-bottom = right
+systray-top = right
+systray-bottom = none
 
 # -------------------------------------------
 # Styles
