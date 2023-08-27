@@ -2,7 +2,7 @@ font pango:Hack 16
 title_align center
 default_border pixel 2
 default_floating_border pixel 2
-default_orientation vertical
+default_orientation horizontal
 workspace_layout default
 hide_edge_borders smart
 

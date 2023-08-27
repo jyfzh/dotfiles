@@ -14,7 +14,7 @@ set statusline+=\[%{&fileformat}\]
 set statusline+=\ %l:%c
 set statusline+=\ %p%%
 
-set listchars=tab:->\ 
+" set listchars=tab:->\ 
 set backspace=indent,eol,start
 set nowrap
 set wrapmargin=2

@@ -11,8 +11,7 @@
         "buildkit": true
     },
     "registry-mirrors": [
-        "https://b5a20ilj.mirror.aliyuncs.com",
-        "http://hub-mirror.c.163.com",
-        "https://registry.docker-cn.com"
+        "https://mirror.baidubce.com",
+        "https://dockerproxy.com"
     ]
 }
