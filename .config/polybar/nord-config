@@ -27,7 +27,7 @@ fixed-center = true
 # if the problem is solved.
 # If problem still persist, look at Polybar's wiki for more options.
 override-redirect = false
-wm-restack = i3wm
+wm-restack = bspwm
 
 # -------------------------------------------
 # Modules
@@ -64,9 +64,9 @@ wm-restack = i3wm
 # mullvad-status: showing mullvad status
 
 # Top modules
-top-left = notify network-short backlight pulseaudio battery i3
+top-left = notify network-short backlight pulseaudio battery i3 bspwm
 top-center = date
-top-right = title keyboard kdeconnect clipmenu-widget onedrive-widget v2ray-widget
+top-right = title keyboard kdeconnect onedrive-widget v2ray-widget
 
 # Bottom modules
 bottom-left =

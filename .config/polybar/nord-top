@@ -66,34 +66,34 @@ ws-icon-8 = ${config.ws-icon-8}
 ws-icon-9 = ${config.ws-icon-9}
 ws-icon-default = ${config.ws-icon-default}
 
-label-focused = %icon%
+label-focused = %name%
 label-focused-underline = ${colors.nord7}
 label-focused-foreground = ${colors.nord7}
 label-focused-padding = 2
 
-label-occupied = %icon%
+label-occupied = %name%
 label-occupied-underline = ${colors.nord9}
 label-occupied-foreground = ${colors.nord9}
 label-occupied-padding = 2
 
-label-empty = %icon%
-label-empty-foreground = ${colors.buffer}
-label-empty-padding = 2
+label-empty =
+label-empty-foreground =
+label-empty-padding =
 
-label-urgent = 
+label-urgent = %index%
 label-urgent-foreground = ${colors.urgent}
 label-urgent-background = ${colors.foreground}
 label-urgent-padding = 2
 
 ; seperator
-label-separator = |
+label-separator =
 label-separator-foreground = ${colors.buffer}
 
 [module/workspace-name]
 type = internal/i3
 strip-wsnumbers = false
 
-format = <label-state>
+format = <label-state> <label-mode>
 
 label-focused = %name%
 label-focused-padding = 2

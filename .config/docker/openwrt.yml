@@ -1,0 +1,32 @@
+version: '2.1'
+
+services:
+  openwrt:
+    image: registry.cn-shanghai.aliyuncs.com/suling/openwrt:latest
+    restart: always
+    environment:
+       - TZ=Asia/Shanghai
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    hostname: openwrt
+    container_name: openwrt
+    stop_signal: SIGKILL
+    volumes:
+      - ./config:/etc/config
+      - ./etc/shadow:/etc/shadow
+      - ./etc/firewall.user:/etc/firewall.user
+      - ./etc/passwall:/usr/share/passwall/rules
+    command: ["/sbin/init"]
+    networks:
+      - dockervlan
+
+networks:
+  dockervlan:
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      config:
+        - subnet: "192.168.8.0/24"
+          gateway: "192.168.8.1"

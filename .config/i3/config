@@ -21,11 +21,12 @@ floating_modifier Mod1
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-bindsym Mod1+Return exec --no-startup-id alacritty
+bindsym Mod4+x exec /home/$USER/.config/rofi/scripts/powermenu_t2
+bindsym Mod4+shift+s exec ~/.config/rofi/applets/bin/screenshot.sh
 bindsym Mod4+l exec /home/$USER/.config/scripts/i3lock.sh
-bindsym Mod1+Shift+q kill
+bindsym Mod1+Return exec --no-startup-id alacritty
+bindsym Mod1+w kill
 bindsym Mod1+space exec /home/$USER/.config/rofi/scripts/launcher_t3
-bindsym Mod1+x exec /home/$USER/.config/rofi/scripts/powermenu_t2
 
 bindsym Mod1+$left focus left
 bindsym Mod1+$down focus down
@@ -49,7 +50,7 @@ bindsym Mod1+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym Mod1+semicolon layout stacking
-bindsym Mod1+w layout tabbed
+# bindsym Mod1+w layout tabbed
 bindsym Mod1+e layout toggle split
 
 # toggle tiling / floating
@@ -157,16 +158,13 @@ for_window [title="Welcome to DataGrip"]         floating enable resize set 800 
 for_window [title="Welcome to WebStorm"]         floating enable resize set 800 600, move position center
 for_window [title="Welcome to CLion"]            floating enable resize set 800 600, move position center
 
-# huawei matebook 14
-exec_always --no-startup-id echo "40 60" | sudo tee /sys/devices/platform/huawei-wmi/charge_control_thresholds
 exec_always --no-startup-id feh --bg-fill -z $HOME/OneDrive/Pictures/wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom -b
+exec_always autotiling
 exec --no-startup-id fcitx5 -d
 exec --no-startup-id dunst
-exec --no-startup-id gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id nm-applet
-exec --no-startup-id sudo matebook-applet
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && notify-send 'volume up'
 bindsym Mod1+F6 exec pactl set-sink-volume @DEFAULT_SINK@ +10% && notify-send 'volume up'
