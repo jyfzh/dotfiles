@@ -312,7 +312,7 @@ click-left = ${config.notify-click-left}
 type = internal/network
 interface = ${config.interface}
 
-interval = 1
+interval = 3
 
 format-connected = %{A}<ramp-signal>%{A}
 format-disconnected = %{A}<label-disconnected>%{A}
@@ -339,7 +339,7 @@ ramp-signal-3-underline = ${colors.success}
 
 [module/spotify]
 type = custom/script
-interval = 1
+interval = 3
 format-prefix = " "
 format = <label>
 exec = python3 $HOME/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
@@ -353,7 +353,7 @@ click-middle = playerctl --player=spotify previous
 type = custom/script
 
 exec = ~/.config/polybar/scripts/clash.sh
-interval = 1
+interval = 3
 
 click-left = ~/.config/polybar/scripts/clash.sh toggle
 
@@ -361,7 +361,7 @@ click-left = ~/.config/polybar/scripts/clash.sh toggle
 type = custom/script
 
 exec = ~/.config/polybar/scripts/v2ray.sh
-interval = 1
+interval = 3
 
 click-left = ~/.config/polybar/scripts/v2ray.sh toggle
 
@@ -409,8 +409,3 @@ exec = ~/.config/polybar/scripts/mullvad.sh
 interval = 5
 
 click-left = ${config.mullvad-click-left}
-
-[module/kdeconnect]
-type = custom/script
-exec = "~/.config/polybar/scripts/polybar-kdeconnect.sh -d"
-tail = true

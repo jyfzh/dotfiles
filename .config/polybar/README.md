@@ -268,6 +268,3 @@ One-line style program runner. It will cover the top panel by left click the ico
 
 ![rofi-run](https://github.com/Yucklys/polybar-nord-theme/raw/master/screenshots/rofi-run.png)
 
-### polybar-kdeconnect
-
-[polybar-kdeconnect](https://github.com/haideralipunjabi/polybar-kdeconnect)

@@ -12,7 +12,7 @@ click-right = ~/.config/rofi/scripts/powermenu_t3
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 3
 
 format = <ramp-load> <label>
 
@@ -81,7 +81,7 @@ format-underline = ${colors.nord7}
 type = internal/network
 interface = ${config.interface}
 
-interval = 1
+interval = 3
 
 format-connected = <label-connected>
 

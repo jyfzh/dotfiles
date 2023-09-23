@@ -158,7 +158,7 @@ for_window [title="Welcome to DataGrip"]         floating enable resize set 800 
 for_window [title="Welcome to WebStorm"]         floating enable resize set 800 600, move position center
 for_window [title="Welcome to CLion"]            floating enable resize set 800 600, move position center
 
-exec_always --no-startup-id feh --bg-fill -z $HOME/OneDrive/Pictures/wallpaper
+exec_always --no-startup-id feh --bg-fill -z $HOME/.local/share//wallpaper
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom -b
 exec_always autotiling

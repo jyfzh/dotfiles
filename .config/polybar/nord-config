@@ -64,9 +64,9 @@ wm-restack = bspwm
 # mullvad-status: showing mullvad status
 
 # Top modules
-top-left = notify network-short backlight pulseaudio battery i3 bspwm
+top-left = notify backlight pulseaudio battery i3 bspwm
 top-center = date
-top-right = title keyboard kdeconnect onedrive-widget v2ray-widget
+top-right = title keyboard onedrive-widget v2ray-widget
 
 # Bottom modules
 bottom-left =
