@@ -8,4 +8,4 @@ services:
       - "5244:5244"
     restart: unless-stopped
     volumes:
-      - ${PWD}/alist:/opt/alist/data
+      - /opt/alist/data:/opt/alist/data

@@ -6,7 +6,7 @@ services:
     container_name: srvbox
     network_mode: host
     volumes:
-      - ./config:/opt/server_box
+      - /opt/server_box:/opt/server_box
     environment:
       - TZ=Asia/Shanghai
       # Custom listen address

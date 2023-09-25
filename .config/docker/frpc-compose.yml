@@ -4,6 +4,6 @@ services:
         restart: unless-stopped
         network_mode: host
         volumes:
-            - '/home/jyf/.config/frp/frpc.ini:/etc/frp/frpc.ini'
+            - '/etc/frp/frpc.ini:/etc/frp/frpc.ini'
         container_name: frpc
         image: snowdreamtech/frpc
