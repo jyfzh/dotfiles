@@ -21,9 +21,9 @@ floating_modifier Mod1
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-bindsym Mod4+x exec /home/$USER/.config/rofi/scripts/powermenu_t2
+bindsym Mod1+x exec /home/$USER/.config/rofi/scripts/powermenu_t2
 bindsym Mod4+shift+s exec ~/.config/rofi/applets/bin/screenshot.sh
-bindsym Mod4+l exec /home/$USER/.config/scripts/i3lock.sh
+bindsym Mod1+l exec /home/$USER/.config/scripts/i3lock.sh
 bindsym Mod1+Return exec --no-startup-id alacritty
 bindsym Mod1+w kill
 bindsym Mod1+space exec /home/$USER/.config/rofi/scripts/launcher_t3
