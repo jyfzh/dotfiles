@@ -43,7 +43,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=ttrss # feel free to change the password
     volumes:
-      - ~/postgres/data/:/var/lib/postgresql/data # persist postgres data to ~/postgres/data/ on the host
+      - /opt/tiny-rss/postgres/data/:/var/lib/postgresql/data # persist postgres data to ~/postgres/data/ on the host
     networks:
       - database_only
     restart: always
