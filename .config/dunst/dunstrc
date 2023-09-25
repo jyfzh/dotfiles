@@ -12,10 +12,10 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 400
-    height = 260
+    width = 200
+    height = 150
     origin = top-right
-    offset = 20x80
+    offset = 20x40
 
 
     progress_bar = true
@@ -54,7 +54,7 @@
 
     # Set the font
     # font = "Noto Sans 11"
-    font = "HACK 15"
+    font = "HACK 11"
 
     # Set line height to font height
     line_height = 0
