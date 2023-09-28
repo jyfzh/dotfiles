@@ -7,13 +7,24 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
-if [ "$1" == "light" ]
-then
-	polybar -c $HOME/.config/polybar/bars/light-config nord-top &
-	polybar -c $HOME/.config/polybar/bars/light-config nord-down &
+exec_polybar() {
+    if [ "$2" == "light" ]
+    then
+        MONITOR=$1 polybar -c $HOME/.config/polybar/bars/light-config nord-top &
+        MONITOR=$1 polybar -c $HOME/.config/polybar/bars/light-config nord-down &
+    else
+        MONITOR=$1 polybar -c $HOME/.config/polybar/bars/dark-config nord-top &
+        MONITOR=$1 polybar -l info -c $HOME/.config/polybar/bars/dark-config nord-down &
+    fi
+}
+
+# show on all monitor
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    exec_polybar $m $1
+  done
 else
-	polybar -c $HOME/.config/polybar/bars/dark-config nord-top &
-	polybar -c $HOME/.config/polybar/bars/dark-config nord-down &
+  exec_polybar
 fi
 
 echo "Bars launched..."

@@ -12,7 +12,7 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 200
+    width = 300
     height = 150
     origin = top-right
     offset = 20x40

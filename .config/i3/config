@@ -1,3 +1,8 @@
+exec_always --no-startup-id feh --bg-fill -z $HOME/.local/share/wallpaper
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec autotiling
+exec xdg-autostart
+
 font pango:Hack 16
 title_align center
 default_border pixel 2
@@ -23,7 +28,6 @@ tiling_drag modifier titlebar
 
 bindsym Mod1+x exec /home/$USER/.config/rofi/scripts/powermenu_t2
 bindsym Mod4+shift+s exec ~/.config/rofi/applets/bin/screenshot.sh
-bindsym Mod1+l exec /home/$USER/.config/scripts/i3lock.sh
 bindsym Mod1+Return exec --no-startup-id alacritty
 bindsym Mod1+w kill
 bindsym Mod1+space exec /home/$USER/.config/rofi/scripts/launcher_t3
@@ -157,14 +161,6 @@ for_window [title="Welcome to IntelliJ IDEA"]    floating enable resize set 800 
 for_window [title="Welcome to DataGrip"]         floating enable resize set 800 600, move position center
 for_window [title="Welcome to WebStorm"]         floating enable resize set 800 600, move position center
 for_window [title="Welcome to CLion"]            floating enable resize set 800 600, move position center
-
-exec_always --no-startup-id feh --bg-fill -z $HOME/.local/share//wallpaper
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id picom -b
-exec_always autotiling
-exec --no-startup-id fcitx5 -d
-exec --no-startup-id dunst
-exec --no-startup-id nm-applet
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && notify-send 'volume up'
 bindsym Mod1+F6 exec pactl set-sink-volume @DEFAULT_SINK@ +10% && notify-send 'volume up'

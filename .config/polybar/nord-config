@@ -8,7 +8,7 @@
 # DPI value for HiDPI screen
 # dpi = 96
 # Main monitor, default to MONITOR environment variable.
-# monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:eDP-1}
 
 # bar position, apply globally
 width = 100%
