@@ -14,17 +14,20 @@ exec_polybar() {
         MONITOR=$1 polybar -c $HOME/.config/polybar/bars/light-config nord-down &
     else
         MONITOR=$1 polybar -c $HOME/.config/polybar/bars/dark-config nord-top &
-        MONITOR=$1 polybar -l info -c $HOME/.config/polybar/bars/dark-config nord-down &
+        MONITOR=$1 polybar -c $HOME/.config/polybar/bars/dark-config nord-down &
     fi
 }
 
-# show on all monitor
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    exec_polybar $m $1
-  done
+MONITOR_NAME="eDP-1"
+EXTERNAL_MONITOR_NAME="HDMI-1"
+
+exec_polybar $MONITOR_NAME
+
+STATUS_EXTERNAL_MONITOR=$(xrandr --query | grep $EXTERNAL_MONITOR_NAME)
+if [[ ! $STATUS_EXTERNAL_MONITOR == *disconnected* ]]; then
+    exec_polybar $EXTERNAL_MONITOR_NAME
 else
-  exec_polybar
+    xrandr --output $EXTERNAL_MONITOR_NAME --off
 fi
 
 echo "Bars launched..."

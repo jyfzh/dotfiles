@@ -9,3 +9,4 @@ services:
     restart: unless-stopped
     volumes:
       - /opt/alist/data:/opt/alist/data
+      - /opt/alist/storage:/opt/alist/storage
