@@ -6,7 +6,7 @@ services:
     ports:
       - 181:80
     environment:
-      - SELF_URL_PATH=http://192.168.2.2:181/ # please change to your own domain
+      - SELF_URL_PATH=http://ubuntu.local:181/ # please change to your own domain
       - DB_PASS=ttrss # use the same password defined in `database.postgres`
       - PUID=1000
       - PGID=1000

@@ -1,0 +1,58 @@
+# Configuration for FbTerm
+
+# font family names/pixelsize used by fbterm, multiple font family names must be seperated by ','
+# and using a fixed width font as the first is strongly recommended
+# force font width (and/or height), usually for non-fixed width fonts
+# legal value format: n (fw_new = n), +n (fw_new = fw_old + n), -n (fw_new = fw_old - n)
+
+# Recommendations 14-8-18 16-10-20 21-12-24 26-15-32
+font-names=Hack,JetBrainsMono Nerd Font Mono,Noto Sans CJK SC
+font-size=26
+font-width=15
+font-height=36
+
+# default color of foreground/background text
+color-background=234
+color-foreground=254
+color-0=3a3a3a
+color-1=d75f00
+color-2=5faf5f
+color-3=af8700
+color-4=0087d7
+color-5=875fff
+color-6=00afd7
+color-7=b2b2b2
+color-8=4e4e4e
+color-9=d7875f
+color-10=5fd75f
+color-11=d7af00
+color-12=00afd7
+color-13=af5fff
+color-14=00d7d7
+color-15=e4e4e4
+
+# max scroll-back history lines of every window, value must be [0 - 65535], 0 means disable it
+history-lines=0
+
+# up to 5 additional text encodings, multiple encodings must be seperated by ','
+# run 'iconv --list' to get available encodings.
+text-encodings=UTF-8,GB18030,GBK,CP936,LATIN1
+
+# cursor shape: 0 = underline, 1 = block
+# cursor flash interval in milliseconds, 0 means disable flashing
+cursor-shape=1
+cursor-interval=500
+
+# additional ascii chars considered as part of a word while auto-selecting text, except ' ', 0-9, a-z, A-Z
+word-chars=._-
+
+# change the clockwise orientation angle of screen display
+# available values: 0 = 0 degree, 1 = 90 degrees, 2 = 180 degrees, 3 = 270 degrees
+screen-rotate=0
+
+# specify the favorite input method program to run
+# input-method=fcitx5-fbterm
+
+## do not turn on this when using tmux, tmux will have display problems
+## treat ambiguous width characters as wide
+ambiguous-wide=no
