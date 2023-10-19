@@ -9,5 +9,3 @@ export GPG_TTY=$(tty)
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 export PATH="$HOME/.cargo/bin/:$HOME/.local/bin:$PATH"
-
-export GOPATH="$HOME/.go"

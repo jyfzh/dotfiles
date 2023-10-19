@@ -39,8 +39,8 @@
 			"settings": {
 				"vnext": [
 					{
-						"address": "www.wycjyf.live",
-						"port": 443,
+						"address": "fyrubuntu.eastasia.cloudapp.azure.com",
+						"port": 80,
 						"users": [
 							{
 								"id": "b831381d-6324-4d53-ad4f-8cda48b30811",
@@ -55,16 +55,8 @@
 			},
 			"streamSettings": {
 				"network": "ws",
-				"security": "tls",
-				"tlsSettings": {
-					"serverName": "www.wycjyf.live",
-					"allowInsecure": true
-				},
 				"wsSettings": {
-					"path": "/iamff/",
-					"headers": {
-						"Host": "www.wycjyf.live"
-					}
+					"path": "/iamff/"
 				}
 			},
 			"mux": {

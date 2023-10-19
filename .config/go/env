@@ -1,0 +1,3 @@
+GO111MODULE=on
+GOPATH=/home/jyf/.go
+GOPROXY=https://goproxy.io,direct

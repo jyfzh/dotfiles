@@ -2,7 +2,6 @@ version: "3"
 services:
   navidrome:
     image: deluan/navidrome:latest
-    user: 1000:1000 # should be owner of volumes
     ports:
       - "4533:4533"
     restart: unless-stopped
@@ -11,7 +10,7 @@ services:
       ND_SCANSCHEDULE: 1h
       ND_LOGLEVEL: info
       ND_SESSIONTIMEOUT: 24h
-      ND_BASEURL: "ubuntu.local"
+      ND_BASEURL: ""
     volumes:
       - "/opt/navidrome/data:/data"
       - "/opt/navidrome/music:/music:ro"
