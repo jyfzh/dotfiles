@@ -1,12 +1,16 @@
 version: '3'
 services:
-  v2raya-local:
+  v2raya:
     container_name: v2raya
+    restart: unless-stopped
     image: mzz2017/v2raya
     network_mode: host
     volumes:
-      - /etc/v2raya:/etc/v2raya
-    restart: always
+      - v2raya_data:/etc/v2raya
     privileged: true
     environment:
       - V2RAYA_LOG_FILE=/tmp/v2raya.log
+
+volumes:
+  v2raya_data:
+

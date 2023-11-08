@@ -3,12 +3,13 @@ version: '3'
 services:
 
   miniflux:
+    container_name: miniflux
+    restart: unless-stopped
     image: miniflux/miniflux:latest
     ports:
-      - "127.0.0.1:8080:8080"
+      - 8080:8080
     depends_on:
       - db
-    restart: unless-stopped
     environment:
       - ADMIN_USERNAME=admin
       - ADMIN_PASSWORD=123456
@@ -18,13 +19,14 @@ services:
       - RUN_MIGRATIONS=1
 
   db:
+    container_name: miniflux-db
     image: postgres:latest
     restart: unless-stopped
     environment:
       - POSTGRES_USER=miniflux
       - POSTGRES_PASSWORD=secret
     volumes:
-      - miniflux-db:/var/lib/postgresql/data
+      - miniflux_db:/var/lib/postgresql/data
 
 volumes:
-  miniflux-db:
+  miniflux_db:

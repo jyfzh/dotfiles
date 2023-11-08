@@ -1,12 +1,13 @@
 version: "3"
 services:
   service.rss:
-    image: wangqiru/ttrss:latest
     container_name: ttrss
+    restart: unless-stopped
+    image: wangqiru/ttrss:latest
     ports:
       - 181:80
     environment:
-      - SELF_URL_PATH=http://ubuntu.local:181/ # please change to your own domain
+      - SELF_URL_PATH=http://localhost:181/ # please change to your own domain
       - DB_PASS=ttrss # use the same password defined in `database.postgres`
       - PUID=1000
       - PGID=1000
@@ -18,35 +19,34 @@ services:
       - database_only
     stdin_open: true
     tty: true
-    restart: always
 
   service.mercury: # set Mercury Parser API endpoint to `service.mercury:3000` on TTRSS plugin setting page
     image: wangqiru/mercury-parser-api:latest
-    container_name: mercury
+    restart: unless-stopped
+    container_name: ttrss-mercury
     networks:
       - public_access
       - service_only
-    restart: always
 
   service.opencc: # set OpenCC API endpoint to `service.opencc:3000` on TTRSS plugin setting page
     image: wangqiru/opencc-api-server:latest
-    container_name: opencc
+    restart: unless-stopped
+    container_name: ttrss-opencc
     environment:
       - NODE_ENV=production
     networks:
       - service_only
-    restart: always
 
   database.postgres:
     image: postgres:13-alpine
-    container_name: postgres
+    restart: unless-stopped
+    container_name: ttrss-postgres
     environment:
       - POSTGRES_PASSWORD=ttrss # feel free to change the password
     volumes:
-      - /opt/tiny-rss/postgres/data/:/var/lib/postgresql/data # persist postgres data to ~/postgres/data/ on the host
+      - ttrss_postgres:/var/lib/postgresql/data # persist postgres data to ~/postgres/data/ on the host
     networks:
       - database_only
-    restart: always
 
   # utility.watchtower:
   #   container_name: watchtower
@@ -60,6 +60,7 @@ services:
 
 volumes:
   feed-icons:
+  ttrss_postgres:
 
 networks:
   public_access: # Provide the access for ttrss UI

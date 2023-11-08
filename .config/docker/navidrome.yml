@@ -1,10 +1,11 @@
 version: "3"
 services:
   navidrome:
+    container_name: navidrome
+    restart: unless-stopped
     image: deluan/navidrome:latest
     ports:
-      - "4533:4533"
-    restart: unless-stopped
+      - 4533:4533
     environment:
       # Optional: put your config options customization here. Examples:
       ND_SCANSCHEDULE: 1h
@@ -12,5 +13,8 @@ services:
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: ""
     volumes:
-      - "/opt/navidrome/data:/data"
-      - "/opt/navidrome/music:/music:ro"
+      - navidrome_data:/data
+      - navidrome_music:/music
+volumes:
+  navidrome_data:
+  navidrome_music:

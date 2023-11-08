@@ -2,14 +2,14 @@ version: '3'
 services:
   dokuwiki:
     container_name: dokuwiki
-    image: php:7-apache-bullseye
     restart: unless-stopped
+    image: php:7-apache-bullseye
     ports:
       - '80:80'
     volumes:
-      - 'dokuwiki_config:/var/www/html'
-      - 'php_config:/usr/local/etc/php'
+      - dokuwiki_config:/var/www/html
+      - dokuwiki_php_config:/usr/local/etc/php
 
 volumes:
   dokuwiki_config:
-  php_config:
+  dokuwiki_php_config:

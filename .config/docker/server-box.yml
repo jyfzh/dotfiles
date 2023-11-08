@@ -1,12 +1,12 @@
 version: "3.0"
 services:
   srvbox:
-    image: lollipopkit/srvbox_monitor:latest
-    restart: unless-stopped
     container_name: srvbox
+    restart: unless-stopped
+    image: lollipopkit/srvbox_monitor:latest
     network_mode: host
     volumes:
-      - /opt/server_box:/opt/server_box
+      - srvbox_data:/opt/server_box
     environment:
       - TZ=Asia/Shanghai
       # Custom listen address
@@ -15,3 +15,5 @@ services:
       # - SBM_TLS_CRT=/root/.config/server_box/cert.pem
       # TLS Key
       # - SBM_TLS_KEY=/root/.config/server_box/key.pem
+volumes:
+  srvbox_data:
