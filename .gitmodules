@@ -1,3 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:jyf-111/nvim
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = git@github.com:jyf-111/emacs.d.git

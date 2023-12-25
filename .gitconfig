@@ -1,7 +1,5 @@
 [http]
 	sslVerify = false
-[credential]
-	helper = manager-core
 [user]
 	name = jyf
 	email = jyfserendipity@outlook.com
