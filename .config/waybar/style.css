@@ -1,211 +1,277 @@
+/*
+# Hello! Hope I am making this clear enough so you can modify it to your needs
+
+# -------- About me --------- #
+# author = Emiliano Samario   #
+# github username = celepharn #
+# mail = celephrn@hotmail.com #
+# --------------------------- #
+
+Also, check de documentation!
+https://github.com/Alexays/Waybar/wiki
+ */
+
 * {
-	border: none;
-	border-radius: 10;
-    font-family: "Hack" ;
-	font-size: 15px;
-	min-height: 10px;
+    min-height: 20px;
+    font-family: "JetBrains Mono";
+    font-size: 15px;
+    border: none;
+    border-radius: 3px;
 }
 
 window#waybar {
-	background: transparent;
+    background-color:transparent;
+    border-top: 8px transparent;
+    border-radius: 8px;
+    color: #ffffff;
+    margin: 16px 16px;
+    transition-property: background-color;
+    transition-duration: 5s;
 }
 
 window#waybar.hidden {
-	opacity: 0.2;
+    opacity: 0.2;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-
 #window {
-	margin-top: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 5px;
-	transition: none;
+    background: transparent;
     color: transparent;
-	background: transparent;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
 }
-
 #tags {
-	margin-top: 3px;
-	margin-left: 12px;
-	font-size: 4px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	background: #161320;
-	transition: none;
+    background: #161320;
+    font-size: 4px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    margin-left: 12px;
+    transition: none;
 }
-
 #tags button {
-	transition: none;
-	color: #B5E8E0;
-	background: transparent;
-	font-size: 16px;
-	border-radius: 2px;
+    background: transparent;
+    border-radius: 2px;
+    color: #b5e8e0;
+    font-size: 16px;
+    transition: none;
 }
-
 #tags button.occupied {
-	transition: none;
-	color: #F28FAD;
-	background: transparent;
-	font-size: 4px;
+    background: transparent;
+    color: #f28fad;
+    font-size: 4px;
+    transition: none;
 }
-
 #tags button.focused {
-	color: #ABE9B3;
-    border-top: 2px solid #ABE9B3;
-    border-bottom: 2px solid #ABE9B3;
+    border-bottom: 2px solid #abe9b3;
+    border-top: 2px solid #abe9b3;
+    color: #abe9b3;
 }
-
 #tags button:hover {
-	transition: none;
-	box-shadow: inherit;
-	text-shadow: inherit;
-	color: #FAE3B0;
-    border-color: #E8A2AF;
-    color: #E8A2AF;
+    border-color: #e8a2af;
+    color: #fae3b0;
+    transition: none;
 }
-
 #tags button.focused:hover {
-    color: #E8A2AF;
+    color: #e8a2af;
 }
-
 #workspaces button {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #d8d8dc;
+    background-color: #1e2021;
+    color: #b5e8e0;
+    font-family: feather;
+    font-size: 10px;
+    margin: 4px 2px 0 2px;
+    min-width: 32px;
+    padding: 2px 0 0 0;
+}
+#workspaces button.active{
+    background: linear-gradient(220deg, rgba(248,189,150,1) 0%, rgba(181,232,224,1) 49%, rgba(0,212,255,1) 100%);
+    color: #1e2021;
+    font-family: feather;
+    font-size: 10px;
+    margin: 4px 2px 0 2px;
+    min-width: 32px;
+    padding: 2px 0 0 0;
+}
+#workspaces button:hover {
+    color: #b4befe;
+    font-family: feather;
+    font-size: 10px;
+
+}
+#workspaces button.focused {
+    background-color: #bbccdd;
+    color: #1e2021;
+    font-family: feather;
+    font-size: 10px;
+}
+#workspaces button.urgent {
+    background-color: #fae3b0;
+    font-family: feather;
+    font-size: 10px;
 }
 
-#workspaces button.active {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #ABE9B3;
+#window,
+#workspaces {
+    font-family: feather;
+    font-size: 10px;
+    margin: 0 4px;
 }
 
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:first-child > #workspaces {
+    margin-right: 0;
+}
 
 #network {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #bd93f9;
+    background: #1e2021;
+    border-radius: 3px;
+    color: #bd93f9;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
 }
 
 #pulseaudio {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #1A1826;
-	background: #FAE3B0;
+    background: #1e2021;
+    border-radius: 3px;
+    color: #fae3b0;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
 }
 
 #battery {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #B5E8E0;
+    background: #1e2021;
+    border-radius: 3px;
+    color: #b5e8e0;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 7px;
+    padding-right: 5px;
+    transition: none;
 }
 
 #battery.charging, #battery.plugged {
-	color: #161320;
-    background-color: #B5E8E0;
+    background-color: #1e2021;
+    color: #b5e8e0;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #B5E8E0;
-    color: #161320;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-@keyframes blink {
-    to {
-        background-color: #BF616A;
-        color: #B5E8E0;
-    }
+    background-color: #1e2021;
+    color: #b5e8e0;
 }
 
 #backlight {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #F8BD96;
+    background: #1e2021;
+    border-radius: 3px;
+    color: #f8bd96;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
 }
+
 #clock {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #ABE9B3;
+    background: #1e2021;
+    border-radius: 3px;
+    color: #abe9b3;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 7px;
+    padding-right: 5px;
+    transition: none;
 }
 
 #memory {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #DDB6F2;
+    background: #1e2021;
+    border-radius: 3px;
+    color: #ddb6f2;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
 }
+
+#temperature {
+    background: #1e2021;
+    border-radius: 3px;
+    color: #f8bd96;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+}
+
 #cpu {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #96CDFB;
+    background: #1e2021;
+    border-radius: 3px;
+    color: #96cdfb;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+}
+
+#custom-launcher {
+    background: #1e2021;
+    border-radius: 3px;
+    color: #fae3b0;
+    font-size: 15px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 11px;
+    padding-right: 3px;
+    transition: none;
+}
+
+#custom-power {
+    background: #1e2021;
+    border-radius: 3px;
+    color: #f28fad;
+    font-size: 10px;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    transition: none;
 }
 
 #tray {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	border-radius: 10px;
-	transition: none;
-	color: #B5E8E0;
-	background: #242424;
+    /* background: #1e2021; */
+    border-radius: 3px;
+    color: #f28fad;
+    font-size: 10px;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    transition: none;
 }
 

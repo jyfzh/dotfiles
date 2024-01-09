@@ -1,7 +1,14 @@
-export GPG_TTY=$(tty)
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+# editor
 export EDITOR=nvim
 export VISUAL=nvim
 
+# gpg
+export GPG_TTY=$(tty)
+
+# fzf
 export FZF_DEFAULT_COMMAND="rg --files ."
 export FZF_DEFAULT_OPTS="--preview 'cat {}'"
 

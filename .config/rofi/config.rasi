@@ -1,5 +1,5 @@
 configuration {
-    font: "Hack 14";
+    font: "JetBrainsMono 14";
     line-margin: 10;
 
     display-ssh:    "";

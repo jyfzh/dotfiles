@@ -1,81 +1,130 @@
-// https://github.com/theCode-Breaker/riverwm
+/*
+# Hello! Hope I am making this clear enough so you can modify it to your needs
+
+# -------- About me --------- #
+# author = Emiliano Samario   #
+# github username = celepharn #
+# mail = celephrn@hotmail.com #
+# --------------------------- #
+
+Also, check de documentation!
+https://github.com/Alexays/Waybar/wiki
+*/
 {
-    "layer": "top",
-    "modules-left": ["cpu","memory", "battery", "hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["tray","custom/wallpaper", "network","backlight", "pulseaudio"],
+	/* settings and defining what modules we want being displayed */
+	"gtk-layer-shell": true,
+	"layer": "top",
+	"modules-left": ["custom/launcher", "cpu", "temperature", "memory", "tray"],
+	"modules-center": ["hyprland/workspaces"],
+	"modules-right": ["backlight", "pulseaudio", "network", "battery", "clock", "custom/power"],
+	"height": 22,
 
-    "pulseaudio": {
-        "tooltip": false,
-        "scroll-step": 5,
-        "format": "{icon} {volume}%",
-        "format-muted": "{icon} 0%",
-        "on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "format-icons": {
-            "default": ["", "", ""]
-        }
-    },
-
-    "network": {
-        "tooltip": false,
-        "format-wifi": "  {essid}",
-        "format-ethernet": ""
-    },
-    "backlight": {
-        "tooltip": false,
-        "format": " {}%",
-        "interval":1
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
+	/* module configuration */
+    	"custom/launcher":{
+        	"format": " ",
+        	"tooltip": false,
+        	"on-click": "bash ~/.config/polybar/blocks/scripts//launcher.sh",
+        	"on-click-right": "killall rofi"
+    	},
+    	"cpu": {
+     		"interval": 5,
+        	"format": " {usage}%",
+        	"max-length": 10
+    	},
+    	"temperature": {
+       		"interval": 5,
+        	"tooltip": false,
+        	"format": " {temperatureC}°C",
+        	"max-length": 10,
+        	"thermal-zone": 1,
+        	"input-filename": "temp1_input",
+        	"hwon-path": "sys/devices/platform/coretemp.0/hwon/hwon5/temp1_input"
+    	},
+    	"memory": {
+        	"interval": 10,
+        	"format": " {}%",
+        	"max-length": 10
+    	},
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "1": "1",
+                "2": "2",
+                "3": "3",
+                "4": "4",
+                "5": "5",
+                "6": "6",
+                "7": "7",
+                "8": "8",
+                "9": "9",
+                "10": "10",
+                "default": ""
+            },
+            "on-click": "activate"
         },
-        "format": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "tray":{
-        "icon-size":18,
-        "spacing": 10
-    },
-    "clock": {
-        "format": "{:%H:%M}  ",
-        "format-alt": "{:%A, %B %d, %Y (%R)}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode"          : "year",
-            "mode-mon-col"  : 3,
-            "weeks-pos"     : "right",
-            "on-scroll"     : 1,
-            "on-click-right": "mode",
-            "format": {
-                "months":     "<span color='#ffead3'><b>{}</b></span>",
-                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
+        "backlight": {
+            "tooltip": false,
+            "format": " {}%",
+            "interval":1,
+            "on-scroll-up": "light -A 5",
+            "on-scroll-down": "light -U 5",
+            "interval": 2,
+            "align": 0,
+            "rotate": 0,
+            "format": "{icon} {percent}%",
+            "format-icons": ["", "", "󰌵", "󰛨"],
+            "on-click": "",
+            "on-scroll-up": "light -A 5%",
+            "on-scroll-down": "light -U 5%",
+            "smooth-scrolling-threshold": 1
         },
-        "actions":  {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        }
-    },
-    "cpu": {
-        "interval": 15,
-        "format": " {}%",
-        "max-length": 10
-    },
-    "memory": {
-        "interval": 30,
-        "format": " {}%",
-        "max-length": 10
-    },
+        "pulseaudio": {
+            "tooltip": false,
+            "scroll-step": 5,
+            "format": "{icon} {volume}%",
+            "format-muter": "  muted",
+            "format-icons": {
+                "default": ["", "📢", "🔊"]
+            },
+            "on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+        },
+        "network": {
+            "tooltip": false,
+            "format-wifi": "{icon} {essid}",
+            "format-alt": "{icon}",
+            "format-alt-click": "click-right",
+            "format-disconnected": "{icon} offline",
+            "margin-top": 9,
+            "margin-bottom": 9,
+            "margin-right": 9,
+            "margin-left": 9,
+            "format-icons": {
+                "wifi": [""],
+                "ethernet": [""],
+                "disconnected": ["睊"]
+            },
+            "on-click": "bash ~/.config/rofi-theme-sunset/scripts/wifimenu.sh"
+        },
+        "battery": {
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "{icon} {capacity}%",
+            "format-charging": " {capacity}%",
+            "format-plugged": " {capacity}%",
+            "format-alt": "{time} {icon}",
+            "format-icons": ["", "", "", "", ""]
+        },
+        "clock": {
+            "format": "{: %H:%M }",
+            "format-alt": "{:󰥔 %a, %d %b}"
+        },
+        "custom/power":{
+            "tooltip": false,
+            "font": "Awesome",
+            "format": "",
+            "on-click": "wlogout"
+        },
 }
