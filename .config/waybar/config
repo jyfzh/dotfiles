@@ -1,4 +1,5 @@
 /*
+# sunset-waybar-theme
 # Hello! Hope I am making this clear enough so you can modify it to your needs
 
 # -------- About me --------- #
@@ -9,42 +10,46 @@
 
 Also, check de documentation!
 https://github.com/Alexays/Waybar/wiki
-*/
+ */
 {
-	/* settings and defining what modules we want being displayed */
-	"gtk-layer-shell": true,
-	"layer": "top",
-	"modules-left": ["custom/launcher", "cpu", "temperature", "memory", "tray"],
-	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["backlight", "pulseaudio", "network", "battery", "clock", "custom/power"],
-	"height": 22,
+    /* settings and defining what modules we want being displayed */
+    "gtk-layer-shell": true,
+        "layer": "top",
+        "modules-left": ["custom/launcher", "cpu", "temperature", "memory", "tray"],
+        "modules-center": ["hyprland/workspaces"],
+        "modules-right": ["backlight", "pulseaudio", "network", "battery", "clock", "custom/power"],
+        "height": 22,
 
-	/* module configuration */
-    	"custom/launcher":{
-        	"format": " ",
-        	"tooltip": false,
-        	"on-click": "bash ~/.config/polybar/blocks/scripts//launcher.sh",
-        	"on-click-right": "killall rofi"
-    	},
-    	"cpu": {
-     		"interval": 5,
-        	"format": " {usage}%",
-        	"max-length": 10
-    	},
-    	"temperature": {
-       		"interval": 5,
-        	"tooltip": false,
-        	"format": " {temperatureC}°C",
-        	"max-length": 10,
-        	"thermal-zone": 1,
-        	"input-filename": "temp1_input",
-        	"hwon-path": "sys/devices/platform/coretemp.0/hwon/hwon5/temp1_input"
-    	},
-    	"memory": {
-        	"interval": 10,
-        	"format": " {}%",
-        	"max-length": 10
-    	},
+        /* module configuration */
+        "custom/launcher":{
+            "format": " ",
+            "tooltip": false,
+            "on-click": "rofi -show drun",
+            "on-click-right": "killall rofi"
+        },
+        "cpu": {
+            "interval": 5,
+            "format": " {usage}%",
+            "max-length": 10
+        },
+        "temperature": {
+            "interval": 5,
+            "tooltip": false,
+            "format": " {temperatureC}°C",
+            "max-length": 10,
+            "thermal-zone": 1,
+            "input-filename": "temp1_input",
+            "hwon-path": "sys/devices/platform/coretemp.0/hwon/hwon5/temp1_input"
+        },
+        "memory": {
+            "interval": 10,
+            "format": " {}%",
+            "max-length": 10
+        },
+        "tray": {
+            "icon-size": 18,
+            "spacing": 10
+        },
         "hyprland/workspaces": {
             "format": "{icon}",
             "format-icons": {
@@ -81,11 +86,9 @@ https://github.com/Alexays/Waybar/wiki
         "pulseaudio": {
             "tooltip": false,
             "scroll-step": 5,
-            "format": "{icon} {volume}%",
-            "format-muter": "  muted",
-            "format-icons": {
-                "default": ["", "📢", "🔊"]
-            },
+            "format": "🔊 {volume}%",
+            "format-bluetooth": " {volume}%",
+            "format-muter": "🔇 muted",
             "on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle"
         },
         "network": {
@@ -103,7 +106,7 @@ https://github.com/Alexays/Waybar/wiki
                 "ethernet": [""],
                 "disconnected": ["睊"]
             },
-            "on-click": "bash ~/.config/rofi-theme-sunset/scripts/wifimenu.sh"
+            "on-click": ""
         },
         "battery": {
             "states": {
@@ -119,11 +122,10 @@ https://github.com/Alexays/Waybar/wiki
         },
         "clock": {
             "format": "{: %H:%M }",
-            "format-alt": "{:󰥔 %a, %d %b}"
+            "format-alt": "{: %Y-%m-%d}"
         },
         "custom/power":{
             "tooltip": false,
-            "font": "Awesome",
             "format": "",
             "on-click": "wlogout"
         },

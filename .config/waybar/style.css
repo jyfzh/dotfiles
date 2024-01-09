@@ -233,6 +233,17 @@ window#waybar.hidden {
     transition: none;
 }
 
+#tray {
+    background: #1e2021;
+    border-radius: 3px;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: none;
+}
+
 #custom-launcher {
     background: #1e2021;
     border-radius: 3px;
