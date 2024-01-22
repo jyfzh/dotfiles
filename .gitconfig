@@ -1,5 +1,6 @@
 [http]
 	sslVerify = false
+	proxy = localhost:10809
 [user]
 	name = jyf
 	email = jyfserendipity@outlook.com
@@ -9,3 +10,5 @@
 	autocrlf = input
 [push]
 	default = simple
+[https]
+	proxy = localhost:10809

@@ -121,8 +121,8 @@ https://github.com/Alexays/Waybar/wiki
             "format-icons": ["", "", "", "", ""]
         },
         "clock": {
-            "format": "{: %H:%M }",
-            "format-alt": "{: %Y-%m-%d}"
+            "format": "{:⏲️ %H:%M }",
+            "format-alt": "{:📅 %Y-%m-%d}"
         },
         "custom/power":{
             "tooltip": false,

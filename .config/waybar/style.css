@@ -192,8 +192,10 @@ window#waybar.hidden {
     margin-bottom: 0px;
     margin-left: 4px;
     margin-top: 4px;
-    padding-left: 7px;
-    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 4px;
     transition: none;
 }
 
