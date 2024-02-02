@@ -1,7 +1,0 @@
-// /etc/docker/daemon.json
-{
-    "registry-mirrors": [
-        "https://mirror.baidubce.com",
-        "https://dockerproxy.com"
-    ]
-}

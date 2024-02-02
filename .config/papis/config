@@ -1,9 +1,0 @@
-[papers]
-dir = ~/Documents/papers
-
-[books]
-dir = ~/Documents/books
-
-[settings]
-default-library = books
-

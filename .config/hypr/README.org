@@ -1,5 +1,9 @@
 * hyprland
 ** hyprland.conf
+
+#+begin_src 
+paru -S waybar hyprpaper xdg-autostart polkit-kde-agent
+#+end_src
 ** hyprpaper.conf
 
 example

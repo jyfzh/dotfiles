@@ -6,7 +6,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # gpg
-export GPG_TTY=$(tty)
+# export GPG_TTY=$(tty)
 
 # fzf
 export FZF_DEFAULT_COMMAND="rg --files ."
