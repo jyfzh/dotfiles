@@ -9,8 +9,8 @@ indent_size = 4
 tab_width = 4
 indent_style = space
 
-[*.py]
-indent_style = space
+[*.cpp]
+indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
@@ -19,10 +19,8 @@ trim_trailing_whitespace = false
 indent_style = tab
 
 [lib/**.js]
-indent_style = space
 indent_size = 2
 
 [{package.json,.travis.yml}]
-indent_style = space
 indent_size = 2
 
