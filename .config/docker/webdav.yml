@@ -1,0 +1,17 @@
+version: '1'
+services:
+  webdav:
+  	container_name: webdav
+    image: bytemark/webdav
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      AUTH_TYPE: Digest # HTTP: Digest, HTTPS: Basic
+      USERNAME: jyf
+      PASSWORD: 7788
+    volumes:
+      - webdav-data:/var/lib/dav/data
+
+volumes:
+   webdat-data
