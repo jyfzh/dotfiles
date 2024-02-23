@@ -1,17 +1,18 @@
-version: '1'
+version: '3'
 services:
   webdav:
-  	container_name: webdav
+    container_name: webdav
     image: bytemark/webdav
     restart: always
     ports:
-      - "8080:80"
+      - "82:80"
     environment:
-      AUTH_TYPE: Digest # HTTP: Digest, HTTPS: Basic
+      AUTH_TYPE: Basic
       USERNAME: jyf
       PASSWORD: 7788
     volumes:
       - webdav-data:/var/lib/dav/data
+      - /home/syncthing/org/agenda/:/var/lib/dav/data/agenda
 
 volumes:
-   webdat-data
+  webdav-data:

@@ -1,0 +1,33 @@
+right_format="""
+$status\
+$cmd_duration\
+$battery\
+$time\
+"""
+# $memory_usage\
+
+scan_timeout = 10
+add_newline = true
+
+[memory_usage]
+disabled = false
+
+[battery]
+disabled = false
+
+[[battery.display]]
+threshold = 100
+
+[time]
+disabled = false
+
+[character]
+disabled = false
+
+[os]
+disabled = false
+format = "[$symbol]($style)"
+
+[status]
+disabled = false
+symbol = "✘ "
