@@ -1,0 +1,4 @@
+Config(
+  x: Fraction(0.5),
+  y: Fraction(0.3),
+)
