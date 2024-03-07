@@ -1,11 +1,7 @@
-[http]
-	sslVerify = false
 [user]
 	name = jyf
-	email = jyfserendipity@outlook.com
+	email = jyfendipity@outlook.com
 [pull]
 	rebase = true
 [core]
 	autocrlf = input
-[push]
-	default = simple
