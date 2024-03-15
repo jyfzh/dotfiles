@@ -24,10 +24,6 @@ disabled = false
 [character]
 disabled = false
 
-[os]
-disabled = false
-format = "[$symbol]($style)"
-
 [status]
 disabled = false
 symbol = "✘ "

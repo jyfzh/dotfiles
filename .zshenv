@@ -1,3 +1,5 @@
+export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [Yes, No, Abort, Edit]"
+
 # bin
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
@@ -16,3 +18,5 @@ export FZF_DEFAULT_OPTS="--preview 'cat {}'"
 # rust
 export PATH="$HOME/.cargo/bin/:$PATH"
 
+# electron
+export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
