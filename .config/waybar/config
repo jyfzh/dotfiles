@@ -12,7 +12,6 @@
 
         // Modules configuration
         "hyprland/workspaces": {
-            "active-only": true,
             "sort-by-number": true,
             "on-click": "activate",
             "on-scroll-down": "hyprctl dispatch workspace e+1",
