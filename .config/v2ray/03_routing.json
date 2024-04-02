@@ -1,0 +1,61 @@
+{
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "type": "field",
+                "outboundTag": "jp",
+                "domain": [
+                    "geosite:openai"
+                ]
+            },
+            {
+                "type": "field",
+                "domain": [
+                    "geosite:github",
+                    "geosite:azure",
+                    "geosite:spotify"
+                ],
+                "balancerTag": "balancer"
+            },
+            {
+                "type": "field",
+                "outboundTag": "blackhole",
+                "domain": [
+                    "geosite:category-ads-all",
+                    "domain:googeadsserving.cn",
+                    "geosite:spotify-ads"
+                ]
+            },
+            {
+                "type": "field",
+                "outboundTag": "direct",
+                "domain": [
+                    "geosite:private",
+                    "geosite:cn",
+                    "geosite:microsoft",
+                    "geosite:azure"
+                ]
+            },
+            {
+                "type": "field",
+                "inboundTag": "dns-in",
+                "outboundTag": "dns-out"
+            },
+            {
+                "type": "field",
+                "network": "tcp,udp",
+                "balancerTag": "balancer"
+            }
+        ],
+        "balancers": [
+            {
+                "tag": "balancer",
+                "selector": [
+                    "fyr",
+                    "jyf"
+                ]
+            }
+        ]
+    }
+}

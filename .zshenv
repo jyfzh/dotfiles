@@ -18,5 +18,8 @@ export FZF_DEFAULT_OPTS="--preview 'cat {}'"
 # rust
 export PATH="$HOME/.cargo/bin/:$PATH"
 
+# go
+export PATH="$HOME/.go/bin/:$PATH"
+
 # electron
 export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"

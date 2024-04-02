@@ -7,6 +7,9 @@ zinit light zdharma-continuum/history-search-multi-word
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
+zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
+    atpull'%atclone' pick"direnv" src"zhook.zsh" for \
+        direnv/direnv
 
 autoload -Uz compinit; compinit
 zstyle ':completion:*' menu select
@@ -32,3 +35,4 @@ alias ll="ls --color=auto -la"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
+eval "$(starship init zsh)"
