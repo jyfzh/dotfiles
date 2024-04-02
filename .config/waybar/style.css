@@ -1,113 +1,53 @@
 * {
-	color: #b4b4b9;
-	border: none;
-	border-radius: 0;
-	font-size: 13px;
-	padding: 3px 0;
-	margin:  3px 0;
-}
-
-#window {
-	padding: 5px 0;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
 }
 
 window#waybar {
-	padding: 0 0;
-	background-color: transparent;
-	/*background-color: rgba(11, 11, 11, 0.4);*/
-	color: #ffffff;
-}
-
-window#waybar.hidden {
-	background-color: transparent;
-}
-
-window#waybar.empty {
-	background-color: transparent;
-}
-
-window#waybar.solo {
-	background-color: #1A1A21;
-}
-
-window#waybar.mpv {
-	background-color: rgba(255, 255, 255, 0.00);
-}
-
-window#waybar.telegramdesktop {
-	background-color: #212127;
-}
-
-window#waybar.Alacritty {
-  background-color: rgba(255, 255, 255, 0.00);
+    background-color: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
 #workspaces button {
-	padding: 0 0px;
-	margin: 0 0px;
-	background-color: transparent;
-	/*border-left: 2px solid rgba(100, 114, 125, 0.5);*/
-	border-left: 2px solid #635196;
-	color: #999999;
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
 }
 
-#workspaces button.active{
-	color: #ffffff;
-	background-color: transparent;
-	border-left: 2px solid #ffffff;
+#workspaces {
+    margin: 0 4px;
+    color: dimgray;
 }
 
-#workspaces button.persistent {
-	border-left: 2px solid #10100e;
+#workspaces button.active {
+    color: #ffffff;
+    font-weight: 900;
+    border: 1px solid #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
 }
 
 #workspaces button.urgent {
-	border-left: 2px solid #ff76a1;
+    background-color: #eb4d4b;
 }
 
-#network,
-#cpu,
-#memory,
-#backlight,
-#pulseaudio,
-#tray,
-#mode,
-#battery,
-#cpu,
-#memory,
-#clock {
-	/* color: #b4b4b9; */
-	border-left: 2px solid #9f97cc;
-}
-#tray {
-	border-left: transparent;
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
 }
 
-#battery.charging {
-	color: #b4b4b9;
-	border-left: 2px solid #ff761a;
-}
-#battery.discharging {
-	color: #b4b4b9;
-	border-left: 2px solid #99a4bc;
-}
-#battery.warning.discharging {
-	color: #b4b4b9;
-	border-left: 2px solid #ffc552;
-}
-#battery.critical.discharging {
-	color: #b4b4b9;
-	border-left: 2px solid #ff3600;
-}
-#battery.warning.charging {
-	color: #b4b4b9;
-	border-left: 2px solid #ff761a;
-}
-#battery.critical.charging {
-	color: #b4b4b9;
-	border-left: 2px solid #ff761a;
-}
-
-label:focus {
-	background-color: #000000;
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
 }
