@@ -1,30 +1,7 @@
 {
 	"outbounds": [
-		{
-			"tag": "fyr",
-			"protocol": "vmess",
-			"settings": {
-				"vnext": [
-					{
-						"address": "fyrubuntu.eastasia.cloudapp.azure.com",
-						"port": 80,
-						"users": [
-							{
-								"id": "b831381d-6324-4d53-ad4f-8cda48b30811"
-							}
-						]
-					}
-				]
-			},
-			"streamSettings": {
-				"network": "ws",
-				"wsSettings": {
-					"path": "/iamff/"
-				}
-			}
-		},
         {
-            "tag": "jyf",
+            "tag": "hk1",
             "protocol": "vmess",
             "settings": {
                 "vnext": [
@@ -45,10 +22,40 @@
                     "path": "/ws"
                 },
                 "security": "tls"
+            },
+            "mux": {
+                "enabled": true
             }
         },
         {
-            "tag": "jp",
+            "tag": "hk2",
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "prb.eastasia.cloudapp.azure.com",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "b831381d-6324-4d53-ad4f-8cda48b30811"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "path": "/ws"
+                },
+                "security": "tls"
+            },
+            "mux": {
+                "enabled": true
+            }
+        },
+        {
+            "tag": "jp1",
             "protocol": "vmess",
             "settings": {
                 "vnext": [
@@ -69,6 +76,36 @@
                     "path": "/ws"
                 },
                 "security": "tls"
+            },
+            "mux": {
+                "enabled": true
+            }
+        },
+        {
+            "tag": "jp2",
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "prb.japaneast.cloudapp.azure.com",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "b831381d-6324-4d53-ad4f-8cda48b30811"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings": {
+                    "path": "/ws"
+                },
+                "security": "tls"
+            },
+            "mux": {
+                "enabled": true
             }
         },
         {

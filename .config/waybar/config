@@ -5,71 +5,71 @@
     // "width": 1280, // Waybar width
     "spacing": 10, // Gaps between modules (4px)
 
-        // Choose the order of the modules
-        "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-        "modules-center": ["clock"],
-        "modules-right": ["tray", "idle_inhibitor", "backlight", "pulseaudio", "network", "battery"],
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "idle_inhibitor", "backlight", "pulseaudio", "network", "battery"],
 
-        // Modules configuration
-        "hyprland/workspaces": {
-            "sort-by-number": true,
-            "on-click": "activate",
-            "on-scroll-down": "hyprctl dispatch workspace e+1",
-            "on-scroll-up": "hyprctl dispatch workspace e-1"
-        },
-        "idle_inhibitor": {
-            "format": "{icon}",
-            "format-icons": {
-                "activated": " ",
-                "deactivated": " "
-            }
-        },
-        "backlight": {
-            "device": "intel_backlight",
-            "format": "{icon} {percent}%",
-            "format-icons": [" ", " "]
-        },
-        "tray": {
-            "icon-size": 15,
-            "spacing": 10
-        },
-        "battery": {
-            "states": {
-                "good": 95,
-                "warning": 30,
-                "critical": 15
-            },
-            "format": "{icon} {capacity}%",
-            "format-charging": "󰂄  {capacity}%",
-            "format-plugged": "  {capacity}%",
-            "format-alt": "{icon} {time}",
-            "format-icons": [" ", " ", " ", " ", " "]
-        },
-        "network": {
-            "format-wifi": "󰖩  {essid} ({signalStrength}%)",
-            "format-ethernet": "󰈀  {ipaddr}/{cidr}",
-            "tooltip-format": "{ifname} via {gwaddr}",
-            "format-linked": "{ifname} (No IP)",
-            "format-disconnected": "󰌙  Disconnected",
-            "format-alt": "{ifname}: {ipaddr}/{cidr}"
-        },
-        "pulseaudio": {
-            "format": "{icon} {volume}%",
-            "format-bluetooth": "{icon} {volume}%",
-            "format-bluetooth-muted": "{icon}",
-            "format-muted": "{icon}",
-            "format-source": "{volume}% ",
-            "format-source-muted": " ",
-            "format-icons": {
-                "headphone": "󰋍 ",
-                "hands-free": "󰋎 ",
-                "headset": " ",
-                "phone": " ",
-                "portable": " ",
-                "car": " ",
-                "default": ["", "", " "]
-            },
-            "on-click": "pavucontrol"
+    // Modules configuration
+    "hyprland/workspaces": {
+        "sort-by-number": true,
+        "on-click": "activate",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "on-scroll-up": "hyprctl dispatch workspace e-1"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " "
         }
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [" ", " "]
+    },
+    "tray": {
+        "icon-size": 15,
+        "spacing": 10
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+    "network": {
+        "format-wifi": "󰖩  {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀  {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "󰌙  Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "{icon}",
+        "format-muted": "{icon}",
+        "format-source": "{volume}% ",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": "󰋍 ",
+            "hands-free": "󰋎 ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol"
+    }
 }
 

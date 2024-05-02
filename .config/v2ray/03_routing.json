@@ -1,22 +1,39 @@
 {
     "routing": {
-        "domainStrategy": "IPIfNonMatch",
+        "domainStrategy": "AsIs",
+        "balancers": [
+            {
+                "tag": "hk",
+                "selector": [
+                    "hk1",
+                    "hk2"
+                ]
+            },
+            {
+                "tag": "jp",
+                "selector": [
+                    "jp1",
+                    "jp2"
+                ]
+            }
+        ],
         "rules": [
             {
                 "type": "field",
-                "outboundTag": "jp",
+                "balancerTag": "jp",
                 "domain": [
                     "geosite:openai"
                 ]
             },
             {
                 "type": "field",
+                "outboundTag": "hk",
                 "domain": [
                     "geosite:github",
                     "geosite:azure",
-                    "geosite:spotify"
-                ],
-                "balancerTag": "balancer"
+                    "geosite:spotify",
+                    "geosite:epicgames"
+                ]
             },
             {
                 "type": "field",
@@ -31,10 +48,14 @@
                 "type": "field",
                 "outboundTag": "direct",
                 "domain": [
+                    "dlc:china",
                     "geosite:private",
                     "geosite:cn",
+                    "geosite:cloudflare",
+                    "geosite:azure",
                     "geosite:microsoft",
-                    "geosite:azure"
+                    "domain:wpscdn.com",
+                    "domain:mozilla.com"
                 ]
             },
             {
@@ -45,16 +66,7 @@
             {
                 "type": "field",
                 "network": "tcp,udp",
-                "balancerTag": "balancer"
-            }
-        ],
-        "balancers": [
-            {
-                "tag": "balancer",
-                "selector": [
-                    "fyr",
-                    "jyf"
-                ]
+                "balancerTag": "hk"
             }
         ]
     }
