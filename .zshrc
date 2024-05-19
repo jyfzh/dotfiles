@@ -34,5 +34,3 @@ HISTFILE=~/.zsh_history
 alias ll="ls --color=auto -la"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
-eval "$(starship init zsh)"

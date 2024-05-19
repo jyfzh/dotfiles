@@ -117,10 +117,6 @@
             "tag": "blackhole",
             "protocol": "blackhole",
             "settings": {}
-        },
-        {
-            "protocol": "dns",
-            "tag": "dns-out"
         }
     ]
 }

@@ -20,53 +20,15 @@
         "rules": [
             {
                 "type": "field",
-                "balancerTag": "jp",
+                "outboundTag": "jp2",
                 "domain": [
                     "geosite:openai"
                 ]
             },
             {
                 "type": "field",
-                "outboundTag": "hk",
-                "domain": [
-                    "geosite:github",
-                    "geosite:azure",
-                    "geosite:spotify",
-                    "geosite:epicgames"
-                ]
-            },
-            {
-                "type": "field",
-                "outboundTag": "blackhole",
-                "domain": [
-                    "geosite:category-ads-all",
-                    "domain:googeadsserving.cn",
-                    "geosite:spotify-ads"
-                ]
-            },
-            {
-                "type": "field",
-                "outboundTag": "direct",
-                "domain": [
-                    "dlc:china",
-                    "geosite:private",
-                    "geosite:cn",
-                    "geosite:cloudflare",
-                    "geosite:azure",
-                    "geosite:microsoft",
-                    "domain:wpscdn.com",
-                    "domain:mozilla.com"
-                ]
-            },
-            {
-                "type": "field",
-                "inboundTag": "dns-in",
-                "outboundTag": "dns-out"
-            },
-            {
-                "type": "field",
                 "network": "tcp,udp",
-                "balancerTag": "hk"
+                "outboundTag": "hk2"
             }
         ]
     }

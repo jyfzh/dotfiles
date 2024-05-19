@@ -12,26 +12,12 @@
         },
         {
             "listen": "0.0.0.0",
-            "port": "10809",
+            "port": "3128",
             "protocol": "http",
             "settings": {
                 "auth": "noauth",
                 "udp": true,
                 "allowTransparent": false
-            }
-        },
-        {
-            "listen": "127.0.0.1",
-            "port": 53,
-            "protocol": "dokodemo-door",
-            "tag": "dns-in",
-            "settings": {
-                // A 记录和 AAAA 记录会由上面配置的 DNS 服务器处理，
-                // 不会被转发到这里。
-                // 这里只是流量转发，不能像上面那样写 DoH。
-                "address": "8.8.8.8",
-                "port": 53,
-                "network": "tcp,udp"
             }
         }
     ]
