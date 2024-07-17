@@ -1,5 +1,4 @@
 # https://clangd.llvm.org/config
-# https://clangd.llvm.org/config
 CompileFlags:
   Add:  [-xc++, -Wall]
   Remove: -W*
@@ -18,3 +17,4 @@ InlayHints:
   DeducedTypes: Yes
 Hover:
   ShowAKA: Yes
+

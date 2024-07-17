@@ -5,12 +5,6 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 charset = utf-8
-indent_size = 4
-tab_width = 4
-indent_style = space
-
-[*.cpp]
-indent_size = 2
 
 [*.md]
 trim_trailing_whitespace = false
@@ -19,8 +13,8 @@ trim_trailing_whitespace = false
 indent_style = tab
 
 [lib/**.js]
-indent_size = 2
+indent_size = 4
 
 [{package.json,.travis.yml}]
-indent_size = 2
+indent_size = 4
 
