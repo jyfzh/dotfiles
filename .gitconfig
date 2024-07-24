@@ -6,3 +6,6 @@
 [core]
 	autocrlf = input
 	safecrlf = true
+[safe]
+	directory = .
+	directory = doip_client
